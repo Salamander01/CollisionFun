@@ -23,4 +23,5 @@ public class Vector {
     public static Vector fromAngleMagnitude(double angle, double magnitude) {
         return new Vector(magnitude * Math.cos(angle), magnitude * Math.sin(angle));
     }
+
 }

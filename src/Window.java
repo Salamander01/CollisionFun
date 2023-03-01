@@ -25,13 +25,13 @@ abstract class Window extends JPanel {
 
         ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
         executorService.scheduleAtFixedRate(() -> {
-            this.update();
+            this.updateWindow();
             this.repaint();
-        }, 1000, 1000 / fps, TimeUnit.MILLISECONDS);
+        }, 10, 1000 / fps, TimeUnit.MILLISECONDS);
     }
 
     // Protected Methods
-    abstract protected void update();
+    abstract protected void updateWindow();
 
     @Override
     protected void paintComponent(Graphics g) {
