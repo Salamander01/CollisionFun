@@ -8,8 +8,9 @@ public class Vector {
         this.componentY = componentY;
     }
 
-    public Vector add(Vector vector) {
-        return new Vector(this.componentX + vector.componentX, this.componentY + vector.componentY);
+    public void add(Vector vector) {
+        this.componentX += vector.componentX;
+        this.componentY += vector.componentY;
     }
 
     public double getComponentX() {

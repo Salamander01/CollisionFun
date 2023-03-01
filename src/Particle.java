@@ -13,9 +13,15 @@ public class Particle {
         this.velocity = velocity;
     }
 
-    protected void update() {
+    protected void update(int width, int height) {
+        if (this.position.x() > width || this.position.x() < 0) {
+            this.velocity = new Vector(-this.velocity.getComponentX(), this.velocity.getComponentY());
+        }
+        if (this.position.y() > height || this.position.y() < 0) {
+            this.velocity = new Vector(this.velocity.getComponentX(), -this.velocity.getComponentY());
+        }
         this.position.add(velocity);
-        this.velocity = this.velocity.add(acceleration);
+        this.velocity.add(acceleration);
     }
 
 }

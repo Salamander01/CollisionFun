@@ -11,7 +11,7 @@ public class CollisionWindow extends Window {
 
         this.particles = new ArrayList<>();
 
-        this.particles.add(new Particle(10, new Location(500, 10) , new Vector(0, 1.0/6),new Vector(0, 0)));
+        this.particles.add(new Particle(10, new Location(10, 10) , new Vector(0, 10.0/240),new Vector(2, 0)));
 
         this.setBackground(Color.BLACK);
         this.frame.setVisible(true);
@@ -19,7 +19,11 @@ public class CollisionWindow extends Window {
 
     @Override
     protected void updateWindow() {
-        this.particles.forEach(Particle::update);
+        this.particles.forEach(particle -> {
+//            repaint((int) particle.position.x() + particle.radius, (int) particle.position.y() + particle.radius, particle.diameter, particle.diameter);
+            particle.update(this.getWidth(), this.getHeight());
+//            repaint((int) particle.position.x() + particle.radius, (int) particle.position.y() + particle.radius, particle.diameter, particle.diameter);
+        });
     }
 
     @Override
