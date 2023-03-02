@@ -27,7 +27,7 @@ abstract class Window extends JPanel {
         executorService.scheduleAtFixedRate(() -> {
             this.updateWindow();
             this.repaint();
-        }, 10, 1000 / fps, TimeUnit.MILLISECONDS);
+        }, 1000, 1000 / fps, TimeUnit.MILLISECONDS);
     }
 
     // Protected Methods

@@ -14,14 +14,19 @@ public class Particle {
     }
 
     protected void update(int width, int height) {
+
         if (this.position.x() > width || this.position.x() < 0) {
-            this.velocity = new Vector(-this.velocity.getComponentX(), this.velocity.getComponentY());
+            this.velocity = new Vector(-this.velocity.getComponentX() + (this.velocity.getComponentX() * .1), this.velocity.getComponentY());
         }
         if (this.position.y() > height || this.position.y() < 0) {
-            this.velocity = new Vector(this.velocity.getComponentX(), -this.velocity.getComponentY());
+            this.velocity = new Vector(this.velocity.getComponentX(), -this.velocity.getComponentY() + (this.velocity.getComponentY() * .1));
         }
-        this.position.add(velocity);
-        this.velocity.add(acceleration);
+
+        this.position = new Location(this.position.x() + 5 * (this.velocity.getComponentX() / 12), this.position.y() + 5 * (this.velocity.getComponentY() / 12));
+        this.velocity = new Vector(this.velocity.getComponentX() + (this.acceleration.getComponentX() / 2400), this.velocity.getComponentY() + (this.acceleration.getComponentY() / 2400));
+
+//        this.position.add(velocity);
+//        this.velocity.add(acceleration);
     }
 
 }

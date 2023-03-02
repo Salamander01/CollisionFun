@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CollisionFun:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CollisionFun_jar</output-path>
+    <root id="archive" name="CollisionFun.jar">
+      <element id="module-output" name="CollisionFun" />
+    </root>
+  </artifact>
+</component>
