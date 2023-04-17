@@ -1,12 +1,11 @@
 package Graphics;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
 
-public class Graphics {
+public class MainGraphics {
     private JPanel rootPanel;
     private JPanel informationPanel;
     private JPanel optionsPanel;
@@ -15,9 +14,9 @@ public class Graphics {
     private JButton resetButton;
     private JTextArea informationPanelPlaceholderTextArea;
     private JPanel simulationHoldingPanel;
-    private JPanel simulationPanel;
+    private SimulationPanel simulationPanel;
 
-    public Graphics() {
+    public MainGraphics() {
 
         playButton.addActionListener(new ActionListener() {
             @Override
@@ -67,10 +66,21 @@ public class Graphics {
 
     public static void start() {
         JFrame frame = new JFrame("Graphics");
-        frame.setContentPane(new Graphics().rootPanel);
+        frame.setContentPane(new MainGraphics().rootPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setResizable(false);
         frame.setVisible(true);
+    }
+
+    private void createUIComponents() {
+
+        // Create simulationPanel object
+        simulationPanel.setMinimumSize(new Dimension(1000, 750));
+        simulationPanel.setPreferredSize(new Dimension(1000, 750));
+        simulationPanel.setMaximumSize(new Dimension(1000, 750));
+        simulationPanel.setBackground(Color.WHITE);
+        simulationPanel.setEnabled(true);
+        simulationHoldingPanel.add(simulationPanel);
     }
 }
