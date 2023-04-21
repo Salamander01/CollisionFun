@@ -3,10 +3,10 @@ package GUI;
 import javax.swing.*;
 import java.awt.*;
 
-class SimulationPanel extends GenericPanel {
+class SimulationPanel extends JPanel {
 
     protected SimulationPanel() {
-
+        super();
     }
 
     protected void updatePanel() {
